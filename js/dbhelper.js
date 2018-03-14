@@ -1,3 +1,16 @@
+//Register service worker
+if (navigator.serviceWorker) {
+  navigator.serviceWorker.register('/sw.js').then(function() {
+    console.log('Registration Worked!');
+  })
+  .catch(function () {
+    console.log('Registration Failed!');
+  });
+} 
+else {
+  console.log('Service worker is not supported in this browser');
+}
+
 /**
  * Common database helper functions.
  */
