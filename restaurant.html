@@ -13,11 +13,11 @@
   <!-- Beginning header -->
   <header class="col-s-12 col-12">
     <!-- Beginning nav -->
-    <nav class="col-s-12 col-12">
+    <nav class="col-s-12 col-12" role="navigation">
       <h1><a tabindex = "0" href="/">Restaurant Reviews</a></h1>
     </nav>
     <!-- Beginning breadcrumb -->
-    <ul id="breadcrumb" >
+    <ul id="breadcrumb"  aria-label="Breadcrumb">
       <li><a tabindex = "0" href="/">Home</a></li>
     </ul>
     <!-- End breadcrumb -->
@@ -29,7 +29,7 @@
   <main class="col-s-12 col-12" id="maincontent">
     <!-- Beginning map -->
     <section class="col-s-5 col-5" id="map-container">
-      <div id="map"></div>
+      <div id="map" role="application" aria-hidden="true"></div>
     </section>
     <!-- End map -->
     <!-- Beginning restaurant -->
