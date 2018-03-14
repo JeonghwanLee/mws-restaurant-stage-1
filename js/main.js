@@ -137,6 +137,9 @@ fillRestaurantsHTML = (restaurants = self.restaurants) => {
  */
 createRestaurantHTML = (restaurant) => {
   const li = document.createElement('li');
+// Add class name "col-" for grid-based layout
+  li.className = 'col-s-5';
+  li.className += ' col-5';
 
   const image = document.createElement('img');
   image.className = 'restaurant-img';
