@@ -14,6 +14,14 @@ window.initMap = () => {
         center: restaurant.latlng,
         scrollwheel: false
       });
+
+      // Remove focus on google maps
+      google.maps.event.addListener(self.map, "tilesloaded", function(){
+        [].slice.apply(document.querySelectorAll('#map a,button')).forEach(function(item) {
+          item.setAttribute('tabindex','-1');
+        });
+      });
+
       fillBreadcrumb();
       DBHelper.mapMarkerForRestaurant(self.restaurant, self.map);
     }
@@ -81,12 +89,13 @@ fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => 
 
     const day = document.createElement('td');
     day.innerHTML = key;
+    day.setAttribute('tabindex','4');
     row.appendChild(day);
 
     const time = document.createElement('td');
     time.innerHTML = operatingHours[key];
+    time.setAttribute('tabindex','4');
     row.appendChild(time);
-
     hours.appendChild(row);
   }
 }
